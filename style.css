@@ -1,0 +1,42 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, white, burlywood);
+    font-family: 'Arial', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, white, rgba(255,255,255,0));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-right li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    position: relative;
+    top: -3px; /* move it up a tiny bit */
+}
