@@ -4,6 +4,9 @@ body {
     background: linear-gradient(to bottom, white, burlywood);
     font-family: 'Arial', Arial, sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 .navbar {
     display: flex;
@@ -12,6 +15,10 @@ body {
     padding: 20px 40px;
     background: linear-gradient(to bottom, white, rgba(255,255,255,0));
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .nav-left h1 {
