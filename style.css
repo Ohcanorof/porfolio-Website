@@ -1,22 +1,32 @@
-body {
-    min-height: 100vh;
-    margin: 0;
-    background: linear-gradient(to bottom, white, burlywood);
-    font-family: 'Arial', Arial, sans-serif;
-}
+/* General settings */
 html {
     scroll-behavior: smooth;
 }
+header {
+    background: transparent;
+    z-index: 999;
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', Arial, sans-serif;
+    background: linear-gradient(to bottom, white, burlywood);
 
+}
+
+/* Navbar styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     padding: 20px 40px;
     background: linear-gradient(to bottom, white, rgba(255,255,255,0));
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: fixed; /* <<< CHANGE THIS to fixed */
     top: 0;
+    left: 0;
+    width: 100%; /* Make sure it stretches across the screen */
     z-index: 1000;
     backdrop-filter: blur(10px);
 }
@@ -38,6 +48,12 @@ html {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+    display: inline-block; /* <--- THIS MAKES HOVER SCALE WORK */
+}
+
+.nav-right li a:hover {
+    transform: scale(1.1);
 }
 
 .linkedin-icon {
@@ -45,5 +61,106 @@ html {
     height: 24px;
     vertical-align: middle;
     position: relative;
-    top: -3px; /* move it up a tiny bit */
+    top: -3px; /* nudges the icon up slightly */
+    transition: transform 0.2s ease-in-out;
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Section styles */
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    min-height: 80vh;
+    text-align: center;
+}
+
+/* Hero image */
+.hero1 {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    border-radius: 10%; /* circle shape */
+    margin-bottom: 20px;
+}
+
+/* Animation settings */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section, .hero1, h2, p {
+    animation: fadeIn 1s ease-in both;
+}
+
+/* Responsive Design */
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .nav-left h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-right li {
+        width: 100%;
+    }
+
+    .nav-right li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .linkedin-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .hero1 {
+        width: 60%;
+        max-width: 250px;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+    .nav-left h1 {
+        font-size: 18px;
+    }
+
+    .nav-right li a {
+        font-size: 16px;
+    }
+
+    .hero1 {
+        width: 80%;
+        max-width: 200px;
+    }
 }
