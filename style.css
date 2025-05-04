@@ -1,17 +1,28 @@
-/* General settings */
+/* Global Reset and General settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
+
 header {
     background: transparent;
     z-index: 999;
 }
+
 body {
     min-height: 100vh;
-    margin: 0;
     font-family: 'Arial', Arial, sans-serif;
     background: linear-gradient(to bottom, white, burlywood);
-
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Navbar styles */
@@ -19,54 +30,65 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    padding: 20px 40px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 40px; /* Back to 40px safely now */
     background: linear-gradient(to bottom, white, rgba(255,255,255,0));
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed; /* <<< CHANGE THIS to fixed */
-    top: 0;
-    left: 0;
-    width: 100%; /* Make sure it stretches across the screen */
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1000;
+     backdrop-filter: blur(100px);
+ }
 
-.nav-left h1 {
-    margin: 0;
-    font-size: 24px;
-}
+ .nav-left h1 {
+     font-size: 24px;
+ }
 
-.nav-right {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
+ .nav-right {
+     list-style: none;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-end;
+     align-items: center;
+     gap: 30px;
+     max-width: 70%;
+ }
 
-.nav-right li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: transform 0.2s ease-in-out;
-    display: inline-block; /* <--- THIS MAKES HOVER SCALE WORK */
-}
+ .nav-right li a {
+     text-decoration: none;
+     color: black;
+     font-weight: bold;
+     transition: transform 0.2s ease-in-out;
+     display: inline-block;
+ }
 
-.nav-right li a:hover {
-    transform: scale(1.1);
-}
+ .nav-right li a:hover {
+     transform: scale(1.1);
+ }
 
-.linkedin-icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    position: relative;
-    top: -3px; /* nudges the icon up slightly */
-    transition: transform 0.2s ease-in-out;
-}
+ .linkedin-icon {
+     width: 24px;
+     height: 24px;
+     vertical-align: middle;
+     position: relative;
+     top: -3px;
+     transition: transform 0.2s ease-in-out;
+ }
 
-.linkedin-icon:hover {
-    transform: scale(1.2);
+ .linkedin-icon:hover {
+     transform: scale(1.2);
+ }
+
+ /* Content Wrapper */
+.content-wrapper {
+    background: transparent;
+    margin: 120px auto 0 auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0);
 }
 
 /* Section styles */
@@ -85,7 +107,7 @@ body {
     width: 100%;
     max-width: 650px;
     height: auto;
-    border-radius: 10%; /* circle shape */
+    border-radius: 10%;
     margin-bottom: 20px;
 }
 
@@ -110,19 +132,30 @@ body {
 /* Medium screens (tablets) */
 @media (max-width: 768px) {
     .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh; /* Full screen height */
+        width: 120px; /* Sidebar width */
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px 20px;
+        justify-content: flex-start;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.9); /* optional light background for readability */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* subtle sidebar shadow */
+        backdrop-filter: blur(10px);
     }
 
     .nav-left h1 {
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 70px;
     }
 
     .nav-right {
         flex-direction: column;
-        gap: 15px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 90px;
         width: 100%;
     }
 
@@ -133,7 +166,7 @@ body {
     .nav-right li a {
         display: block;
         width: 100%;
-        padding: 10px 0;
+        padding: 10px 10px;
         text-align: left;
         font-size: 18px;
     }
@@ -142,9 +175,14 @@ body {
         width: 28px;
         height: 28px;
     }
-
+    .content-wrapper {
+        margin-left: 140px; /* smaller margin (instead of 220px) */
+        margin-right: 10px; /* give a little breathing room */
+        margin-top: 20px;
+        width: calc(100% - 150px); /* auto adjust based on sidebar */
+    }
     .hero1 {
-        width: 60%;
+        width: 90%;
         max-width: 250px;
     }
 }
@@ -153,6 +191,12 @@ body {
 @media (max-width: 480px) {
     .nav-left h1 {
         font-size: 18px;
+    }
+    .content-wrapper {
+        margin-left: 100px;
+        margin-right: 10px;
+        width: calc(100% - 110px);
+        margin-top: 20px;
     }
 
     .nav-right li a {
