@@ -32,63 +32,63 @@ body {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    padding: 20px 40px; /* Back to 40px safely now */
+    padding: 20px 40px;
     background: linear-gradient(to bottom, white, rgba(255,255,255,0));
-     position: fixed;
-     top: 0;
-     left: 0;
-     z-index: 1000;
-     backdrop-filter: blur(100px);
- }
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(100px);
+}
 
- .nav-left h1 {
-     font-size: 24px;
- }
+.nav-left h1 {
+    font-size: 24px;
+}
 
- .nav-right {
-     list-style: none;
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: flex-end;
-     align-items: center;
-     gap: 30px;
-     max-width: 70%;
- }
+.nav-right {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 45px;
+    max-width: 70%;
+}
 
- .nav-right li a {
-     text-decoration: none;
-     color: black;
-     font-weight: bold;
-     transition: transform 0.2s ease-in-out;
-     display: inline-block;
- }
+.nav-right li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+    display: inline-block;
+}
 
- .nav-right li a:hover {
-     transform: scale(1.1);
- }
+.nav-right li a:hover {
+    transform: scale(1.1);
+}
 
- .linkedin-icon {
-     width: 24px;
-     height: 24px;
-     vertical-align: middle;
-     position: relative;
-     top: -3px;
-     transition: transform 0.2s ease-in-out;
- }
+.linkedin-icon {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    transition: transform 0.2s ease-in-out;
+}
 
- .linkedin-icon:hover {
-     transform: scale(1.2);
- }
+.linkedin-icon:hover {
+    transform: scale(1.2);
+}
 
- /* Content Wrapper */
+/* Content Wrapper */
 .content-wrapper {
     background: transparent;
-    margin: 120px auto 0 auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0);
+    padding-top: 55px;
+    width: 100vw;
+    max-width: 100%;
+    border-radius: 0;
+    margin-top: 120px;
 }
 
 /* Section styles */
@@ -98,39 +98,195 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    min-height: 80vh;
+    min-height: 60vh;
+    text-align: center;
+}
+.section-inner {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
     text-align: center;
 }
 
-/* Hero image */
-.hero1 {
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    border-radius: 10%;
+.section-inner h2 {
+    font-size: 36px;    /* Change this to desired heading size */
+    margin-bottom: 10px;
+}
+
+.section-inner p {
+    font-size: 18px;    /* Change this to desired paragraph size */
+    line-height: 1.6;   /* Improves readability */
     margin-bottom: 20px;
 }
 
-/* Animation settings */
-@keyframes fadeIn {
-    from {
+.section-inner a {
+    text-decoration: none;      /* Remove underline */
+    color: inherit;             /* Inherit color from parent (usually paragraph color) */
+    font-size: inherit;         /* Inherit paragraph font size */
+    font-weight: normal;        /* Or bold, if you prefer */
+    transition: transform 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.section-inner a:hover {
+    transform: scale(1.1);      /* Same hover grow as navbar */
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 40px 20px;
+    margin-bottom: 60px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;     /* Limit how wide the inner content gets */
+    margin: 0 auto;        /* Center it horizontally */
+    padding: 0 20px;       /* Optional: side padding */
+}
+
+.hero-text {
+    max-width: 500px;
+    margin-right: 40px;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #444;
+}
+
+.hero1-small {
+    width: 400px;
+    height: auto;
+    border-radius: 15%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+}
+
+.about-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between images */
+    margin-top: 30px; /* Space between text and images */
+    flex-wrap: wrap;  /* Ensures responsiveness on small screens */
+}
+
+.about-photo {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-photo:hover {
+    transform: scale(1.08);
+}
+
+/* Project Section */
+#projects a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    transition: transform 0.2s ease-in-out;
+    display: inline-block;
+}
+
+#projects a:hover {
+    transform: scale(1.1);
+}
+
+.project-icon {
+    width: 20px;           /* Adjust size as needed */
+    height: 20px;
+    margin-left: 8px;      /* Space between text and icon */
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+.section-inner a:hover .project-icon {
+    transform: scale(1.1); /* Icon also grows on hover */
+}
+/* padding for sections */
+#about.section {
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+#projects.section {
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+#contact.section {
+    margin-top: -250px;
+}
+
+/* Fade in keyframes for main content*/
+@keyframes fadeInUp {
+    0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
-    to {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 5s; /* Delay is so the nav bar fades in first */
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Active class added on scroll, this lets the things seen when scrolling to fade in */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+/* Fade in keyframes for main content*/
+
+/* Fade in keyframes for navbar*/
+@keyframes fadeSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.section, .hero1, h2, p {
-    animation: fadeIn 1s ease-in both;
+.navbar {
+    animation: fadeSlideDown 0.8s ease-out forwards;
+    opacity: 0; /* start hidden */
 }
+/* Fade in keyframes for navbar*/
 
 /* Responsive Design */
-
-/* Medium screens (tablets) */
-@media (max-width: 768px) {
+@media (max-width: 1034px) {
     .navbar {
         position: fixed;
         top: 0;
@@ -148,14 +304,14 @@ body {
 
     .nav-left h1 {
         font-size: 20px;
-        margin-bottom: 70px;
+        margin-bottom: 125px;
     }
 
     .nav-right {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 90px;
+        gap: 100px;
         width: 100%;
     }
 
@@ -172,39 +328,52 @@ body {
     }
 
     .linkedin-icon {
-        width: 28px;
-        height: 28px;
+        width: 45px;
+        height: 45px;
     }
+
     .content-wrapper {
-        margin-left: 140px; /* smaller margin (instead of 220px) */
-        margin-right: 10px; /* give a little breathing room */
+        margin-left: 140px; /* Leave space for sidebar */
+        margin-right: 10px;
         margin-top: 20px;
-        width: calc(100% - 150px); /* auto adjust based on sidebar */
+        width: calc(100% - 150px); /* Fill remaining width */
     }
-    .hero1 {
-        width: 90%;
-        max-width: 250px;
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin: 20px 0 0 0;
+    }
+
+    .hero1-small {
+        max-width: 300px;
+        width: 80%;
+        padding: 0 10px;
     }
 }
 
-/* Small screens (phones) */
 @media (max-width: 480px) {
-    .nav-left h1 {
-        font-size: 18px;
-    }
     .content-wrapper {
         margin-left: 100px;
         margin-right: 10px;
-        width: calc(100% - 110px);
         margin-top: 20px;
+        width: calc(100% - 110px);
+    }
+
+    .nav-left h1 {
+        font-size: 18px;
     }
 
     .nav-right li a {
         font-size: 16px;
     }
 
-    .hero1 {
-        width: 80%;
-        max-width: 200px;
+    .hero1-small {
+        max-width: 250px;
+        width: 90%;
+        padding: 0 10px;
     }
 }
