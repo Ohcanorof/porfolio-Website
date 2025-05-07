@@ -110,21 +110,21 @@ body {
 }
 
 .section-inner h2 {
-    font-size: 36px;    /* Change this to desired heading size */
+    font-size: 36px;
     margin-bottom: 10px;
 }
 
 .section-inner p {
-    font-size: 18px;    /* Change this to desired paragraph size */
+    font-size: 18px;
     line-height: 1.6;   /* Improves readability */
     margin-bottom: 20px;
 }
 
 .section-inner a {
     text-decoration: none;      /* Remove underline */
-    color: inherit;             /* Inherit color from parent (usually paragraph color) */
+    color: inherit;
     font-size: inherit;         /* Inherit paragraph font size */
-    font-weight: normal;        /* Or bold, if you prefer */
+    font-weight: normal;
     transition: transform 0.2s ease-in-out;
     display: inline-block;
 }
@@ -133,7 +133,7 @@ body {
     transform: scale(1.1);      /* Same hover grow as navbar */
 }
 
-/* Hero Section */
+/* Hero (intro) Section */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -181,8 +181,8 @@ body {
 .about-images {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between images */
-    margin-top: 30px; /* Space between text and images */
+    gap: 30px; /* Space between images */
+    margin-top: 70px; /* Space between text and images */
     flex-wrap: wrap;  /* Ensures responsiveness on small screens */
 }
 
@@ -353,6 +353,18 @@ body {
         width: 80%;
         padding: 0 10px;
     }
+    /* padding for sections */
+    #about.section {
+        margin-top: -40px;
+        margin-bottom: 40px;
+    }
+    #projects.section {
+        margin-top: -20px;
+        margin-bottom: 40px;
+    }
+    #contact.section {
+        margin-top: -250px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -375,5 +387,17 @@ body {
         max-width: 250px;
         width: 90%;
         padding: 0 10px;
+    }
+    /* padding for sections */
+    #about.section {
+        margin-top: -40px;
+        margin-bottom: 40px;
+    }
+    #projects.section {
+        margin-top: -20px;
+        margin-bottom: 40px;
+    }
+    #contact.section {
+        margin-top: -250px;
     }
 }
