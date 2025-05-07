@@ -97,7 +97,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 60px 20px;
     min-height: 60vh;
     text-align: center;
 }
@@ -223,18 +223,6 @@ body {
 .section-inner a:hover .project-icon {
     transform: scale(1.1); /* Icon also grows on hover */
 }
-/* padding for sections */
-#about.section {
-    margin-top: -40px;
-    margin-bottom: 40px;
-}
-#projects.section {
-    margin-top: -20px;
-    margin-bottom: 40px;
-}
-#contact.section {
-    margin-top: -250px;
-}
 
 /* Fade in keyframes for main content*/
 @keyframes fadeInUp {
@@ -291,20 +279,22 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh; /* Full screen height */
-        width: 120px; /* Sidebar width */
+        height: 100vh;
+        width: 160px;
+        overflow-y: auto; /* allows scrolling if name or nav is too tall */
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         padding: 40px 20px;
-        background: rgba(255, 255, 255, 0.9); /* optional light background for readability */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* subtle sidebar shadow */
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
     }
 
     .nav-left h1 {
         font-size: 20px;
-        margin-bottom: 125px;
+        margin-bottom: 150px;
+        text-align: left;
     }
 
     .nav-right {
@@ -324,7 +314,7 @@ body {
         width: 100%;
         padding: 10px 10px;
         text-align: left;
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .linkedin-icon {
@@ -347,57 +337,109 @@ body {
     .hero-text {
         margin: 20px 0 0 0;
     }
+    .hero-text h2 {
+        font-size: 48px;
+    }
+
+    .hero-text p {
+        font-size: 24px;
+    }
 
     .hero1-small {
         max-width: 300px;
         width: 80%;
         padding: 0 10px;
     }
-    /* padding for sections */
-    #about.section {
-        margin-top: -40px;
-        margin-bottom: 40px;
+    .section {
+        padding: 30px 16px;
     }
-    #projects.section {
-        margin-top: -20px;
-        margin-bottom: 40px;
-    }
-    #contact.section {
-        margin-top: -250px;
-    }
+
 }
 
 @media (max-width: 480px) {
-    .content-wrapper {
-        margin-left: 100px;
-        margin-right: 10px;
-        margin-top: 20px;
-        width: calc(100% - 110px);
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 160px;
+        overflow-y: auto; /* allows scrolling if name or nav is too tall */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-left {
+        width: 100%;
     }
 
     .nav-left h1 {
-        font-size: 18px;
+        font-size: 22px;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.2;
+        margin-bottom: 100px;
+        padding-right: 10px;
     }
 
     .nav-right li a {
-        font-size: 16px;
+        font-size: 25px;
+        padding: 12px 10px;
+    }
+
+    .linkedin-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .content-wrapper {
+        margin-left: 170px;
+        margin-right: 10px;
+        margin-top: 20px;
+        width: calc(100% - 180px);
+    }
+
+    .hero-text h2 {
+        font-size: 48px;
+    }
+
+    .hero-text p {
+        font-size: 24px;
+    }
+    .section {
+        padding: 30px 12px;
+    }
+
+    .section-inner h2 {
+        font-size: 42px;
+    }
+
+    .section-inner p {
+        font-size: 22px;
+    }
+
+    .section-inner a {
+        font-size: 22px;
     }
 
     .hero1-small {
-        max-width: 250px;
-        width: 90%;
+        max-width: 300px;
+        width: 95%;
         padding: 0 10px;
     }
-    /* padding for sections */
-    #about.section {
-        margin-top: -40px;
-        margin-bottom: 40px;
+
+    .about-photo {
+        width: 240px;
     }
-    #projects.section {
-        margin-top: -20px;
-        margin-bottom: 40px;
+
+    .project-icon {
+        width: 26px;
+        height: 26px;
     }
-    #contact.section {
-        margin-top: -250px;
-    }
+
+
 }
